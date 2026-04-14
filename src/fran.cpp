@@ -1,6 +1,6 @@
 #include "funciones.h"
 
-Fran::Fran(std::string, sf::Vector2f posicion)
+Fran::Fran(sf::Vector2f posicion)
     : velocidad(150.f), listo(false)
 {
    if (!textura.loadFromFile("sprite4.png"))
