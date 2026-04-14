@@ -4,8 +4,7 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Juego"); // Crea una ventana window
 
-    sf::RectangleShape enemy({40.f, 40.f});  // Crea objeto enemy
-
+    sf::RectangleShape enemy({40.f, 40.f}); // Crea objeto enemy
 
     enemy.setFillColor(sf::Color::Red);
     enemy.setPosition(200.f, 0.f);
@@ -16,7 +15,7 @@ int main()
     Javier javier3("assets/javier.png", {40.f, 200.f}, 0.1f);
     Javier javier4("assets/javier.png", {100.f, 300.f}, 0.1f);
 
-    //objeto
+    // objeto
     Raul raul({20.f, 20.f});
     Beltran beltran({20.f, 20.f});
 
@@ -42,12 +41,12 @@ int main()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             dir2.x += 1.f;
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-            dir2.y += 1.f;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
             dir2.y -= 1.f;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+            dir2.y += 1.f;
 
-        beltran.mover(dir, dt);
-        
+        beltran.mover(dir2, dt);
+
         mEnemigo(enemy, dt);
 
         // Objeto Javier
@@ -64,7 +63,7 @@ int main()
         raul.mover(dir, dt);
 
         window.clear();
-        window.draw(player);
+        beltran.dibujar(window);
         window.draw(enemy);
         javier.dibujar(window);
         raul.dibujar(window);
