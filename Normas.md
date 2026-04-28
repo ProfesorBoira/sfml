@@ -1,3 +1,5 @@
+# Normas
+## Informacion de incio
 xdpyinfo|grep "depth of root window"
 
 tigervncserver -kill :1
@@ -19,5 +21,7 @@ git commit -m “V2.0 “tu nombre” “tu archivo”
 para cuando no puedas hacer push o commit 
 git merge
 
-incluir en funciones.h #include <cmath.h>
-float modulo(sf::Vector2fvec)
+## Normas para el desarrollo
+
+Todos los objetos tendran una funcion actualizar que recibirá la posición del jugador y dt. 
+De este modo, se llamará del siguiente modo [NombreDelObjeto].actualizar(posicion, dt);
