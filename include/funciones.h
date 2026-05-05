@@ -63,6 +63,8 @@ class Beltran
 {
 public:
     Beltran(const sf::Vector2f posicion);
+    Beltran(const Beltran& otro);         // constructor de copia  ← añadir
+    Beltran& operator=(const Beltran& otro); // asignación         ← añadir
     bool estaListo() const;
     void setPosicion(sf::Vector2f posicion);
     void mover(sf::Vector2f direccion, float dt);
@@ -70,10 +72,12 @@ public:
     void dibujar(sf::RenderWindow &ventana) const;
 
 private:
-    sf::Texture textura;
+    sf::Texture textura,exp1,exp2,exp3;
     sf::Sprite sprite;
     float velocidad;
     bool listo;
+    float tiempo;
+    int estado;  //1=vivo, 2=exp1, 3=exp2, 4=exp3
 };
 
 class Uriel

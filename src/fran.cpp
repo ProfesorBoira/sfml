@@ -1,9 +1,10 @@
 #include "funciones.h"
+#include <cstdlib>
 
 Fran::Fran(sf::Vector2f posicion)
-    : velocidad(150.f), listo(false)
+    : velocidad(11.f), listo(false)
 {
-   if (!textura.loadFromFile("assets/sprite5-1.png"))
+    if (!textura.loadFromFile("assets/sprite5-1.png"))
         return; // listo queda en false
 
     textura.setSmooth(false);
@@ -29,11 +30,10 @@ void Fran::mover(sf::Vector2f direccion, float dt)
 }
 void Fran::actualizar(sf::Vector2f destino, float dt)
 {
-    sf::Vector2f miposicion,direccion;
+    sf::Vector2f miposicion, direccion;
     miposicion = sprite.getPosition();
     direccion = destino - miposicion;
     sprite.move(direccion * velocidad * dt);
-
 }
 void Fran::dibujar(sf::RenderWindow &ventana) const
 {
